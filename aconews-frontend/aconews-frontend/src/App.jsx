@@ -15,7 +15,7 @@ const App = () => {
 
   const fetchTopHeadlines = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/news/top-headlines`);
+      const response = await axios.get(`https://aconews-backend-ib0a.onrender.com/api/news/top-headlines`);
       setNews(response.data.articles);
       setTotalPages(Math.ceil(response.data.totalArticles / 10));
       setError(null);
@@ -27,7 +27,7 @@ const App = () => {
 
   const fetchSearchResults = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/news`, {
+      const response = await axios.get(`https://aconews-backend-ib0a.onrender.com/api/news`, {
         params: { query, category, country, page }
       });
       setNews(response.data.articles);
